@@ -8,4 +8,16 @@ feature 'farms' do
       expect(page).to have_link 'Add a farm'
     end
   end
+
+  context 'farm has been added' do
+    before do
+      Farm.create(name: 'Schwier')
+    end
+
+    scenario 'should display a prompt to add a farm' do
+      visit '/farms'
+      expect(page).to have_content 'Schwier'
+      expect(page).to have_link 'Add a farm'
+    end
+  end
 end

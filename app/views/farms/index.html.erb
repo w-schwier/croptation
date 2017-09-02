@@ -1,0 +1,8 @@
+<% if @farms.any? %>
+  <% @farms.each do |farm| %>
+    <h2> <%= farm.name %> </h2>
+  <% end %>
+<% else %>
+  No farms yet
+<% end %>
+<a href='#'>Add a farm</a>
